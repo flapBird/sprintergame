@@ -11,13 +11,13 @@ export const siteConfig = {
 
   seo: {
     /** Homepage <title>. Used as-is on the homepage. */
-    title: "Play Sprinter Online Free | Sprinter Game — 100M Dash Sprint Racing",
+    title: "Play Sprinter Game Online Free | Sprinter Game — 100M Dash Sprint Racing",
 
     /**
      * Homepage meta description, keep under 160 characters.
      * Describe what the game is and that it's free to play online.
      */
-    description: "Sprinter is a classic 100-meter dash racing game. Alternate arrow keys to gain momentum and sprint past opponents. Play free online — no download needed.",
+    description: "Sprinter Game is a classic 100-meter dash racing game. Alternate arrow keys to gain momentum and sprint past opponents. Play free online — no download needed.",
 
     /** Comma-separated keywords for the homepage. */
     keywords: ["sprinter game", "sprinter game online", "100m sprint game", "running race game", "flash running game", "sprint game free", "track and field game", "crazygames sprinter", "sprinter 100m"],
@@ -31,7 +31,7 @@ export const siteConfig = {
 
   game: {
     /** Name of the game, shown in Hero, JSON-LD, etc. */
-    name: "Sprinter",
+    name: "Sprinter Game",
 
     /** Genre(s) for JSON-LD VideoGame.genre. e.g. ["Sports", "Basketball"]. */
     genre: ["Sports", "Running", "Arcade"],
@@ -43,7 +43,7 @@ export const siteConfig = {
     aspectRatio: "16 / 9",
 
     /** Cover image shown on the idle/launch screen. Replace /public/cover.jpg. */
-    coverImage: "/cover.jpg",
+    coverImage: "/sprintergame-cover.jpeg",
 
     /** Age rating for the game. */
     ageRating: "Everyone",

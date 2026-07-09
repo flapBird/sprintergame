@@ -10,7 +10,7 @@ export default function ContactPage() {
         Contact Us
       </h1>
       <p className="text-text-dark/70 leading-relaxed mb-8">
-        Have questions about Sprinter, found a bug, or want to get in touch? Drop us a line — we read every message.
+        Have questions about Sprinter Game, found a bug, or want to get in touch? Drop us a line — we read every message.
       </p>
 
       {/* Email contact — will be replaced with a form later */}

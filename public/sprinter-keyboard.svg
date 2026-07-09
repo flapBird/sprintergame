@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="267" viewBox="0 0 800 267">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#1a252f"/>
+    </linearGradient>
+    <linearGradient id="keyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ecf0f1"/>
+      <stop offset="100%" stop-color="#bdc3c7"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E74C3C"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="267" rx="20" fill="url(#bg)" filter="url(#shadow)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="22" font-weight="bold" opacity="0.9">
+    CONTROLS
+  </text>
+  
+  <!-- Keyboard base -->
+  <rect x="120" y="65" width="560" height="160" rx="12" fill="#34495e" filter="url(#shadow)"/>
+  
+  <!-- Left Arrow Key -->
+  <rect x="180" y="95" width="90" height="90" rx="12" fill="url(#keyGrad)"/>
+  <rect x="180" y="95" width="90" height="90" rx="12" fill="none" stroke="#E74C3C" stroke-width="3" opacity="0.8"/>
+  <!-- Left arrow -->
+  <polygon points="260,140 230,140 245,125 215,140 245,155 230,140" fill="#E74C3C"/>
+  
+  <!-- Right Arrow Key -->
+  <rect x="530" y="95" width="90" height="90" rx="12" fill="url(#keyGrad)"/>
+  <rect x="530" y="95" width="90" height="90" rx="12" fill="none" stroke="#E74C3C" stroke-width="3" opacity="0.8"/>
+  <!-- Right arrow -->
+  <polygon points="540,140 570,140 555,125 585,140 555,155 570,140" fill="#E74C3C"/>
+  
+  <!-- Plus sign -->
+  <text x="480" y="147" text-anchor="middle" fill="white" font-family="Arial" font-size="36" font-weight="bold">+</text>
+  
+  <!-- Bottom instruction -->
+  <text x="400" y="250" text-anchor="middle" fill="#95a5a6" font-family="Arial, sans-serif" font-size="15">
+    Alternate Left Arrow + Right Arrow to sprint faster!
+  </text>
+</svg>

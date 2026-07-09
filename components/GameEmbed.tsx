@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { siteConfig } from "@/lib/site.config";
 
 export default function GameEmbed() {
-  const [state, setState] = useState<"idle" | "loading" | "playing">("loading");
+  const [state, setState] = useState<"idle" | "loading" | "playing">("idle");
   const [ruffleReady, setRuffleReady] = useState(false);
   const [liked, setLiked] = useState<boolean | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
