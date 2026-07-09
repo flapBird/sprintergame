@@ -34,7 +34,7 @@ export default function HomePage() {
             </p>
             {/* Game screenshot image */}
             <Image
-              src="/sprintergame-dedc-1.jpeg"
+              src="/sprintergame-dedc-1.png"
               alt="Sprinter game screenshot — runners racing on the track"
               width={800}
               height={450}
