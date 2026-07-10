@@ -14,8 +14,8 @@ const config: Config = {
         'text-dark': '#292524',
       },
       fontFamily: {
-        heading: ['var(--font-nunito)', 'sans-serif'],
-        body: ['var(--font-quicksand)', 'sans-serif'],
+        heading: ['Nunito', 'sans-serif'],
+        body: ['Quicksand', 'sans-serif'],
       },
       borderRadius: {
         xl2: '1.5rem',

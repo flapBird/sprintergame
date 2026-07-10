@@ -1,7 +1,20 @@
 /**
  * Site configuration — the single source of truth for the entire game site.
  * When creating a new game site, only edit this file and replace images in /public.
+ *
+ * SENSITIVE VALUES (gaId, adsenseClientId) are read from environment variables:
+ *   NEXT_PUBLIC_GA_ID              — Google Analytics measurement ID (e.g. G-XXXXXXXX)
+ *   NEXT_PUBLIC_ADSENSE_CLIENT_ID  — Google AdSense publisher ID  (e.g. ca-pub-XXXXX)
+ *
+ * Set them in .env.local (not tracked by git) or in your deployment dashboard.
+ *
+ * Because these are NEXT_PUBLIC_* variables, they are inlined at build time
+ * and visible in client-side JS — this is by design for GA + AdSense scripts
+ * that must run in the browser. Never put API secrets or server-side keys here.
  */
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID || "";
+const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "";
 export const siteConfig = {
   /** Display name shown in header, footer, and browser title. */
   siteName: "Sprinter Game",
@@ -76,16 +89,18 @@ export const siteConfig = {
   },
 
   ads: {
+    /** Google AdSense publisher client ID, e.g. "ca-pub-4183802444188513". */
+    clientId: adsenseClientId,
     /**
-     * Keep false until AdSense is approved and real ad code is added.
-     * When true, sidebar and rectangle ad slots appear on the page.
+     * Automatically enabled when NEXT_PUBLIC_ADSENSE_CLIENT_ID is set.
+     * When true, the AdSense script loads globally, and ad slots appear.
      */
-    enabled: false,
+    enabled: !!adsenseClientId,
   },
 
   analytics: {
     /** Google Analytics 4 measurement ID, e.g. G-XXXXXXXX. Leave empty to skip GA. */
-    gaId: "G-XYEF9T1YS6",
+    gaId,
     /** Google Search Console verification code. Leave empty to skip. */
     gscVerification: "",
   },

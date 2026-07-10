@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
-import { Nunito, Quicksand } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/lib/site.config";
 import { buildMetadata } from "@/lib/seo";
 import "./globals.css";
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-nunito",
-});
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-quicksand",
-});
 
 const baseMetadata = buildMetadata({ path: "/" });
 export const metadata: Metadata = {
@@ -37,11 +24,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${nunito.variable} ${quicksand.variable}`}>
+    <html lang="en">
+      <head>
+        {/* Google Fonts — loaded via CSS for sandbox compatibility */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-body text-text-dark antialiased">
         <Header />
         <main>{children}</main>
         <Footer />
+
+        {/* Google AdSense — only injected when client ID is set */}
+        {siteConfig.ads.clientId && (
+          <Script
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.ads.clientId}`}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        )}
 
         {/* Google Analytics 4 — only injected when gaId is set */}
         {siteConfig.analytics.gaId && (
