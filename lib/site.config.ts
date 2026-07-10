@@ -24,7 +24,7 @@ export const siteConfig = {
 
   seo: {
     /** Homepage <title>. Used as-is on the homepage. */
-    title: "Play Sprinter Game Online Free | Sprinter Game — 100M Dash Sprint Racing",
+    title: "Play Sprinter Game Online Free | Sprinter Game",
 
     /**
      * Homepage meta description, keep under 160 characters.
