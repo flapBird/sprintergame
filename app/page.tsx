@@ -3,7 +3,6 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import SidebarLayout from "@/components/SidebarLayout";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import AdSlot from "@/components/AdSlot";
 
 export const metadata = buildMetadata({ path: "/" });
 
@@ -238,8 +237,6 @@ export default function HomePage() {
           </div>
 
 
-                {/* Bottom banner ad */}
-        <AdSlot type="banner" className="my-8" />
       </SidebarLayout>
     </>
   );

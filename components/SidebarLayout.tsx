@@ -1,5 +1,4 @@
 import { siteConfig } from "@/lib/site.config";
-import AdSlot from "./AdSlot";
 
 interface SidebarLayoutProps {
   children: React.ReactNode;
@@ -7,25 +6,10 @@ interface SidebarLayoutProps {
 
 export default function SidebarLayout({ children }: SidebarLayoutProps) {
   return (
-    <div className="max-w-4xl mx-auto mt-6 py-8 sm:py-10 bg-[#FFFBF7] rounded-xl">
+    <div className="max-w-4xl mx-auto mt-6 py-8 sm:py-10 bg-[#FFFBF7] rounded-xl px-4 sm:px-6">
       <div className="flex justify-center gap-8">
-        {/* Left sidebar ad — hidden below xl if ads disabled */}
-        {siteConfig.ads.enabled && (
-          <aside className="hidden xl:flex flex-col gap-6 flex-shrink-0">
-            <AdSlot type="sidebar" />
-          </aside>
-        )}
-
         {/* Main content */}
         <div className="flex-1 max-w-[800px] min-w-0">{children}</div>
-
-        {/* Right sidebar ads — hidden below xl if ads disabled */}
-        {siteConfig.ads.enabled && (
-          <aside className="hidden xl:flex flex-col gap-6 flex-shrink-0">
-            <AdSlot type="sidebar" />
-            <AdSlot type="rectangle" />
-          </aside>
-        )}
       </div>
     </div>
   );
