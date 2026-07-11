@@ -10,6 +10,8 @@ export default function HomePage() {
   return (
     <>
       <SchemaMarkup jsonLd={buildVideoGameJsonLd()} />
+      {/* SEO H1 — visually hidden, visible to search engines */}
+      <h1 className="sr-only">Sprinter Game — 100M Dash Sprint Racing Free Online</h1>
       <Hero />
       <SidebarLayout>
         {/* What is Sprinter Game? */}
