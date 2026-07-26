@@ -2,7 +2,7 @@
 
 **https://sprintergame.xyz/** — Play the classic 100-meter dash game free in your browser.
 
-Sprinter is a cult Flash game from 2006 by the Japanese indie studio Gamedesign.jp. This site preserves it and makes it playable instantly in any modern browser using the [Ruffle](https://ruffle.rs/) Flash emulator. No downloads, no sign-ups, no plugins required.
+Sprinter is a cult Flash game from 2006 by the Japanese indie studio Gamedesign.jp. This site preserves it and makes it playable instantly in any modern browser using the Ruffle Flash emulator. No downloads, no sign-ups, no plugins required.
 
 ---
 
@@ -20,10 +20,10 @@ The game was originally released as an Adobe Flash `.swf` file and is preserved 
 
 | Layer           | Choice                                          |
 | --------------- | ----------------------------------------------- |
-| Framework       | [Next.js](https://nextjs.org/) 14 (App Router)  |
+| Framework       | Next.js 14 (App Router)  |
 | Language        | TypeScript                                      |
-| Styling         | [Tailwind CSS](https://tailwindcss.com/) 3       |
-| Flash Emulation | [Ruffle](https://ruffle.rs/) — CDN + fallback    |
+| Styling         | Tailwind CSS 3       |
+| Flash Emulation | Ruffle — CDN + fallback    |
 | Fonts           | Google Fonts (Nunito / Quicksand)                |
 
 ---
@@ -132,7 +132,7 @@ The site uses a warm athletic palette inspired by track-and-field aesthetics:
 
 ## Deployment
 
-The site is built for [Vercel](https://vercel.com/) with zero additional configuration — just connect the repository and set the environment variables in the Vercel dashboard.
+The site is built for Vercel with zero additional configuration — just connect the repository and set the environment variables in the Vercel dashboard.
 
 The domain `sprintergame.xyz` is configured as the production domain. All routes are statically generated at build time.
 
@@ -140,6 +140,6 @@ The domain `sprintergame.xyz` is configured as the production domain. All routes
 
 ## Credits
 
-- **Game**: Sprinter by [Gamedesign.jp](https://www.gamedesign.jp/) (2006)
-- **Flash preservation**: [Ruffle](https://ruffle.rs/) open-source emulator
+- **Game**: Sprinter by Gamedesign.jp (2006)
+- **Flash preservation**: Ruffle open-source emulator
 - **Site**: Built by Codex
