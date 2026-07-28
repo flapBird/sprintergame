@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * SchemaMarkup injects a JSON-LD script tag for structured data.
  * Use on the homepage with buildVideoGameJsonLd().

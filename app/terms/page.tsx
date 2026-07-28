@@ -2,7 +2,11 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata = buildMetadata({ title: "Terms & Conditions", path: "/terms" });
+export const metadata = buildMetadata({
+  title: "Terms & Conditions",
+  description: "Read the terms and conditions for using SprinterGame.xyz and its browser-based game content.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

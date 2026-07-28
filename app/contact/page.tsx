@@ -1,7 +1,11 @@
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 
-export const metadata = buildMetadata({ title: "Contact", path: "/contact" });
+export const metadata = buildMetadata({
+  title: "Contact",
+  description: "Contact SprinterGame.xyz to report a game issue, broken page, attribution concern, or other site feedback.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -10,7 +14,7 @@ export default function ContactPage() {
         Contact Us
       </h1>
       <p className="text-text-dark/70 leading-relaxed mb-8">
-        Have questions about Sprinter Game, found a bug, or want to get in touch? Drop us a line — we read every message.
+        Found a game issue, broken page, or attribution problem? Send us the details by email.
       </p>
 
       {/* Email contact — will be replaced with a form later */}
@@ -24,8 +28,8 @@ export default function ContactPage() {
         </a>
       </div>
 
-      <p className="mt-6 text-sm text-text-dark/40">
-        We typically respond within 24 hours. For game-related issues, please include your browser and operating system details.
+      <p className="mt-6 text-sm leading-6 text-text-dark/65">
+        For game-related issues, include your browser, operating system, and a short description of what happened.
       </p>
     </div>
   );

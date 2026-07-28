@@ -10,12 +10,13 @@ const config: Config = {
       colors: {
         primary: '#e85d2c',
         secondary: '#009bb8',
+        background: '#fffbf7',
         surface: '#f3efe9',
         'text-dark': '#292524',
       },
       fontFamily: {
-        heading: ['Nunito', 'sans-serif'],
-        body: ['Quicksand', 'sans-serif'],
+        heading: ['"Avenir Next Rounded"', '"Nunito Sans"', 'ui-rounded', 'system-ui', 'sans-serif'],
+        body: ['"Avenir Next"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         xl2: '1.5rem',

@@ -1,244 +1,231 @@
-import { buildMetadata, buildVideoGameJsonLd } from "@/lib/seo";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import SidebarLayout from "@/components/SidebarLayout";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { buildMetadata, buildVideoGameJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata({ path: "/" });
+
+const playSteps = [
+  {
+    number: "01",
+    title: "Click the game",
+    text: "Start the game, then click inside the play area so it can receive keyboard input.",
+  },
+  {
+    number: "02",
+    title: "Wait for the signal",
+    text: "Watch the starter. A clean reaction gives you a better chance in the opening meters.",
+  },
+  {
+    number: "03",
+    title: "Alternate the arrows",
+    text: "Press Left and Right in sequence. A steady rhythm is faster than random key mashing.",
+  },
+];
+
+const raceFeatures = [
+  {
+    title: "Quick races",
+    text: "A 100-meter race takes only a few seconds, so a retry never feels like a chore.",
+  },
+  {
+    title: "Tougher opponents",
+    text: "Every win moves you to a faster field where missed inputs are harder to recover from.",
+  },
+  {
+    title: "A rhythm to learn",
+    text: "The controls are simple, but keeping an even left-right cadence takes practice.",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
       <SchemaMarkup jsonLd={buildVideoGameJsonLd()} />
-      {/* SEO H1 — visually hidden, visible to search engines */}
-      <h1 className="sr-only">Sprinter Game — 100M Dash Sprint Racing Free Online</h1>
       <Hero />
-      <SidebarLayout>
-        {/* What is Sprinter Game? */}
-        <section className="space-y-12">
-          <div>
-            <h2 className="font-heading font-bold text-2xl text-text-dark mb-3">
-              What is Sprinter Game?
-            </h2>
-            <p className="text-text-dark/70 leading-relaxed mb-4">
-              Sprinter Game is a classic 100-meter dash racing game that first appeared back in 2006 and has stood the test of time.
-              Created by Japanese indie developer Gamedesign.jp, this deceptively simple Flash-era gem has captivated millions
-              of players with its addictive, rhythm-driven gameplay. Don't let the straightforward premise fool you — behind those
-              stick-figure sprinters lies one of the most satisfying runner games ever made.
-            </p>
-            <p className="text-text-dark/70 leading-relaxed mb-4">
-              At its core, Sprinter Game is all about momentum. You line up on the track alongside seven other runners, the starting
-              gun fires, and from that moment everything depends on how fast and how steadily you can pump those arrow keys.
-              Each race is a 100-meter sprint — short, intense, and over in about 10 to 15 seconds. Win, and you advance to
-              the next heat with faster opponents. Lose, and you try again. It's the kind of game you sit down to play for five
-              minutes and suddenly realize an hour has slipped by.
-            </p>
-            {/* Game screenshot image */}
-            <Image
-              src="/sprintergame-dedc-1.png"
-              alt="Sprinter game screenshot — runners racing on the track"
-              width={800}
-              height={450}
-              className="my-6 rounded-lg w-full h-auto"
-            />
-            <p className="text-text-dark/70 leading-relaxed">
-              What makes Sprinter Game special isn't complexity — it's feel. The way your character builds speed as you find the right
-              tapping rhythm, the split-second decisions when your timing slips, the genuine rush of surging past an opponent at
-              the last moment. Each level introduces a new track, new competitors, and its own funky background track that somehow
-              makes you tap faster. No installs, no sign-ups, no tutorials — just you, the starting blocks, and 100 meters of pure
-              sprinting action.
-            </p>
-          </div>
 
-          {/* How to Play */}
-          <div>
-            <h2 className="font-heading font-bold text-2xl text-text-dark mb-3">
+      <SidebarLayout>
+        <div className="space-y-16 sm:space-y-20">
+          <header className="border-b border-black/[0.07] pb-12 text-center sm:pb-16">
+            <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.2em] text-primary sm:text-sm">
+              The classic 100-meter dash
+            </p>
+            <h1 className="font-heading text-4xl font-black tracking-[-0.035em] text-text-dark sm:text-5xl">
+              Play Sprinter Game Online
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-dark/70 sm:text-lg">
+              Alternate the left and right arrow keys, keep your rhythm, and race to the finish. Sprinter is free to play
+              in your browser with no download or account.
+            </p>
+          </header>
+
+          <section aria-labelledby="about-sprinter">
+            <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-secondary">
+              A Flash-era track classic
+            </p>
+            <h2 id="about-sprinter" className="font-heading text-3xl font-black tracking-tight text-text-dark sm:text-4xl">
+              About Sprinter Game
+            </h2>
+            <div className="mt-5 space-y-4 text-[1.02rem] leading-8 text-text-dark/75">
+              <p>
+                Sprinter is a 100-meter racing game created by Gamedesign.jp. It first appeared in 2006, when browser games were
+                built in Flash, and it still works because the whole idea is
+                easy to understand: run faster by alternating the left and right arrow keys.
+              </p>
+              <p>
+                The interesting part is the timing. Pressing quickly helps, but pressing the same key twice or losing your cadence can
+                make the runner stumble. Each win leads to a harder race, so the game gradually turns two simple controls into a real
+                test of concentration.
+              </p>
+            </div>
+
+            <figure className="mt-8 overflow-hidden rounded-2xl border border-black/[0.07] bg-white p-2 shadow-sm">
+              <Image
+                src="/sprintergame-dedc-1.png"
+                alt="Runners competing in a 100-meter race in Sprinter Game"
+                width={1772}
+                height={990}
+                sizes="(max-width: 832px) 94vw, 800px"
+                className="h-auto w-full rounded-xl"
+              />
+              <figcaption className="px-3 pb-2 pt-3 text-sm leading-6 text-text-dark/60">
+                Find an even left-right rhythm and keep it through the finish.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="how-to-play" aria-labelledby="how-to-play-title" className="scroll-mt-24">
+            <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-primary">
+              Controls
+            </p>
+            <h2 id="how-to-play-title" className="font-heading text-3xl font-black tracking-tight text-text-dark sm:text-4xl">
               How to Play Sprinter Game
             </h2>
-            <p className="text-text-dark/70 leading-relaxed mb-4">
-              The controls couldn't be simpler: tap your keyboard's <strong>Left Arrow (←)</strong> and <strong>Right Arrow (→)</strong>{' '}
-              alternately, as fast and as evenly as you can. Think of it like drumming on your desk — left, right, left, right — the
-              faster and more consistent your rhythm, the faster your sprinter tears down the track.
+            <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-text-dark/75">
+              You only need two keys. The sequence below is enough to start racing, even if you have never played before.
             </p>
-            {/* Keyboard controls image */}
+
+            <ol className="mt-8 grid gap-4 sm:grid-cols-3">
+              {playSteps.map((step) => (
+                <li key={step.number} className="rounded-2xl border border-black/[0.06] bg-surface p-5">
+                  <span className="font-heading text-sm font-black text-primary">{step.number}</span>
+                  <h3 className="mt-3 font-heading text-lg font-extrabold text-text-dark">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-text-dark/70">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+
             <Image
               src="/sprinter-keyboard.svg"
-              alt="Keyboard diagram showing Left Arrow and Right Arrow keys"
+              alt="Keyboard diagram highlighting the Left Arrow and Right Arrow keys"
               width={800}
               height={267}
-              className="my-6 rounded-lg w-full h-auto"
+              className="mt-8 h-auto w-full rounded-2xl border border-black/[0.06] bg-white"
             />
-            <p className="text-text-dark/70 leading-relaxed mb-4">
-              A few things to keep in mind as you step onto the track:
-            </p>
-            <ul className="list-disc pl-5 space-y-2 text-text-dark/70 leading-relaxed mb-4">
-              <li><strong>Find your groove.</strong> The key to winning isn't just raw speed — it's consistency. If you get too excited
-                and lose your rhythm, your sprinter will stumble and lose precious momentum. Stay calm and find a pace you can sustain.</li>
-              <li><strong>React fast at the start.</strong> The race begins the moment the starting signal appears. Hesitate and you'll
-                already be playing catch-up from lane one.</li>
-              <li><strong>Opponents get tougher.</strong> Every race you win pushes you into a more competitive heat. By the later levels,
-                you'll be facing sprinters who barely leave any room for error.</li>
-              <li><strong>Click the game screen first.</strong> If the arrow keys don't seem to respond when the race starts, click
-                anywhere on the game area with your mouse — this ensures the game window has keyboard focus.</li>
-            </ul>
-            <p className="text-text-dark/70 leading-relaxed">
-              The game runs entirely in your browser — no downloads, no installations, no accounts required. Just open the page and
-              start sprinting. Whether you're on a quick break or settling in for a longer session, Sprinter Game delivers instant,
-              frictionless fun.
-            </p>
-          </div>
 
-          {/* What Makes It Great */}
-          <div>
-            <h2 className="font-heading font-bold text-2xl text-text-dark mb-3">
-              What Makes Sprinter Game So Addictive
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-              <div className="bg-surface rounded-lg p-5">
-                <h3 className="font-heading font-bold text-lg text-text-dark mb-2">Instantly Gratifying</h3>
-                <p className="text-text-dark/70 text-sm leading-relaxed">
-                  Each race lasts about 10–15 seconds. You win or you lose, and you're immediately back in for another go.
-                  It's the perfect pick-up-and-play game — no loading screens, no cutscenes, just pure sprinting.
-                </p>
-              </div>
-              <div className="bg-surface rounded-lg p-5">
-                <h3 className="font-heading font-bold text-lg text-text-dark mb-2">Surprising Depth</h3>
-                <p className="text-text-dark/70 text-sm leading-relaxed">
-                  Beyond the simple controls lies a rhythm game in disguise. Mastering the tempo, recovering from stumbles, and
-                  finding the optimal tapping cadence are skills that develop over dozens of races.
-                </p>
-              </div>
-              <div className="bg-surface rounded-lg p-5">
-                <h3 className="font-heading font-bold text-lg text-text-dark mb-2">Unforgettable Soundtrack</h3>
-                <p className="text-text-dark/70 text-sm leading-relaxed">
-                  Every level has its own funky, upbeat theme tune — a charming touch from Gamedesign.jp that gives each race
-                  its own personality. The music is so catchy you might find yourself humming it long after you've stopped playing.
-                </p>
-              </div>
-              <div className="bg-surface rounded-lg p-5">
-                <h3 className="font-heading font-bold text-lg text-text-dark mb-2">Timeless Appeal</h3>
-                <p className="text-text-dark/70 text-sm leading-relaxed">
-                  Released in 2006 and still going strong with a 8.9/10 community rating, Sprinter Game proves that great game design
-                  doesn't age. It's as fun today as it was the day it launched — a true classic of the casual gaming world.
-                </p>
-              </div>
+            <div className="mt-6 rounded-2xl border-l-4 border-secondary bg-secondary/[0.07] px-5 py-4">
+              <p className="font-heading font-extrabold text-text-dark">If the arrow keys scroll the page</p>
+              <p className="mt-1 text-sm leading-6 text-text-dark/70">
+                Click once inside the game screen, then try the arrow keys again. The game needs keyboard focus before it can read
+                your inputs.
+              </p>
             </div>
-            {/* Gameplay collage image */}
-            <Image
-              src="/sprinter-collage.svg"
-              alt="Sprinter gameplay collage — multiple race levels"
-              width={800}
-              height={400}
-              className="rounded-lg w-full h-auto"
-            />
-          </div>
-        </section>
+          </section>
 
-          {/* Frequently Asked Questions */}
-          <div className="mt-14">
-            <h2 className="font-heading font-bold text-2xl text-text-dark mb-3">
-              FAQ
+          <section aria-labelledby="what-to-expect">
+            <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-secondary">
+              What to expect
+            </p>
+            <h2 id="what-to-expect" className="font-heading text-3xl font-black tracking-tight text-text-dark sm:text-4xl">
+              Simple controls, close finishes
             </h2>
-            <div className="space-y-4">
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>What is Sprinter Game and how do I play it?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {raceFeatures.map((feature) => (
+                <article key={feature.title} className="rounded-2xl border border-black/[0.07] bg-white p-5 shadow-sm">
+                  <h3 className="font-heading text-lg font-extrabold text-text-dark">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-text-dark/70">{feature.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="faq" aria-labelledby="faq-title" className="scroll-mt-24">
+            <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-primary">
+              Common questions
+            </p>
+            <h2 id="faq-title" className="font-heading text-3xl font-black tracking-tight text-text-dark sm:text-4xl">
+              Sprinter Game FAQ
+            </h2>
+            <div className="mt-7 space-y-3">
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>What is Sprinter Game?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Sprinter Game is a 100-meter dash racing game originally released in 2006 by Gamedesign.jp. To play, simply tap your keyboard's Left Arrow (←) and Right Arrow (→) keys alternately — as fast and as evenly as you can. The better your rhythm, the faster your runner sprints down the track. Win races to advance through 12 increasingly difficult levels.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  Sprinter is a browser-based 100-meter racing game by Gamedesign.jp. You control the runner by alternating the Left
+                  and Right Arrow keys and advance by winning each race.
                 </p>
               </details>
 
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>How do I control my runner? The arrow keys aren't working!</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>Why are the arrow keys not working?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  First, click anywhere on the game area with your mouse — the Flash game needs keyboard focus to register your inputs. Once the game has focus, alternate tapping the Left (←) and Right (→) arrow keys. If you still have trouble, try clicking the game screen again or reloading the page.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  Click inside the game first. This gives the game keyboard focus. Then alternate the Left and Right Arrow keys rather
+                  than pressing both at the same time.
                 </p>
               </details>
 
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>Can I play Sprinter Game on my phone or tablet?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>Can I play on a phone or tablet?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Sprinter Game was designed for keyboard play, so it works best on a desktop or laptop computer. On mobile devices, the arrow key controls don't translate well to touch input. For the best experience, play on a device with a physical keyboard.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  The original game uses physical arrow keys, so a desktop or laptop gives the best experience. A phone or tablet
+                  needs a connected keyboard because the game does not include touch controls.
                 </p>
               </details>
 
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>How many levels does Sprinter Game have?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>How many levels are there?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Sprinter Game has 12 levels in total. Each level features a different track with a unique background color and its own funky soundtrack. As you advance, the opponents get faster and more competitive, leaving less room for error. The game is short enough to finish in one sitting, but challenging enough to keep you coming back for more attempts.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  Sprinter Game has 12 levels. The opponents become faster as you progress, and later races leave less room for a
+                  missed input or slow start.
                 </p>
               </details>
 
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>Why does my runner stumble or slow down during the race?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>Do I need to download Flash?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Your runner stumbles when you lose the alternating rhythm — for example, pressing the same key twice in a row, or tapping unevenly. The game rewards consistent, even-paced tapping rather than frantic button mashing. If you stumble, don't panic: recover your rhythm and you'll regain speed. Staying calm under pressure is a key part of mastering Sprinter Game.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  No. The game runs in the browser through Ruffle, a Flash emulator. There is no account, browser plugin, or separate
+                  installation.
                 </p>
               </details>
 
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>Do I need to download anything to play Sprinter Game?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>Why does my runner stumble?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  No downloads or installations are required. The game runs entirely in your browser using Ruffle, a modern Flash emulator. No account, no sign-up, no plugins — just open the page and start playing. It works on all modern browsers including Chrome, Firefox, Safari, and Edge.
-                </p>
-              </details>
-
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>Can I save my progress in Sprinter Game?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
-                </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Sprinter Game uses the classic Flash save system (SharedObject), which may or may not persist in the Ruffle emulator depending on your browser settings. Progress saving is not guaranteed. But since each race is only about 10-15 seconds long, you can easily jump back to any level with a bit of practice.
-                </p>
-              </details>
-
-              <details className="group bg-surface rounded-xl p-4 cursor-pointer open:pb-4">
-                <summary className="font-heading font-semibold text-text-dark list-none flex items-center justify-between gap-2">
-                  <span>Why does the game look different from when it was on Flash?</span>
-                  <svg className="w-5 h-5 text-text-dark/50 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
-                </summary>
-                <p className="mt-3 text-text-dark/70 leading-relaxed text-sm">
-                  Sprinter Game was originally built in Adobe Flash, which is no longer supported by modern browsers. We use Ruffle — an open-source Flash emulator — to run the game. Ruffle does an excellent job preserving the original experience, but you may notice very subtle differences in rendering, sound timing, or performance compared to the original Flash Player. The core gameplay, however, is exactly the same.
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  A stumble usually means the left-right sequence was broken or the timing became uneven. Slow down briefly, recover
+                  the alternating pattern, and then build speed again.
                 </p>
               </details>
             </div>
-          </div>
-
-
+          </section>
+        </div>
       </SidebarLayout>
     </>
   );

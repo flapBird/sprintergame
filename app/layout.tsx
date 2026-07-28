@@ -9,6 +9,7 @@ import "./globals.css";
 const baseMetadata = buildMetadata({ path: "/" });
 export const metadata: Metadata = {
   ...baseMetadata,
+  metadataBase: new URL(siteConfig.domain),
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -25,18 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Google Fonts — loaded via CSS for sandbox compatibility */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="font-body text-text-dark antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-text-dark focus:shadow-xl"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
 
         {/* Google AdSense — only injected when client ID is set */}

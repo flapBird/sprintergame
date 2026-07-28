@@ -24,7 +24,7 @@ The game was originally released as an Adobe Flash `.swf` file and is preserved 
 | Language        | TypeScript                                      |
 | Styling         | Tailwind CSS 3       |
 | Flash Emulation | Ruffle — CDN + fallback    |
-| Fonts           | Google Fonts (Nunito / Quicksand)                |
+| Fonts           | System font stack (no external font request)      |
 
 ---
 
@@ -122,8 +122,8 @@ The site uses a warm athletic palette inspired by track-and-field aesthetics:
 
 | Token      | Value     | Usage                              |
 | ---------- | --------- | ---------------------------------- |
-| `primary`  | `#DC2F2F` | Buttons, accents, hero gradient    |
-| `secondary`| `#1B6B93` | Supporting accents                 |
+| `primary`  | `#E85D2C` | Buttons, accents, hero gradient    |
+| `secondary`| `#009BB8` | Supporting accents                 |
 | `background`| `#FFFBF7`| Page background                    |
 | `surface`  | `#F3EFE9` | Cards, feature boxes               |
 | `text-dark`| `#292524` | Body text and headings             |

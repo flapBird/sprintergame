@@ -104,11 +104,11 @@ export default function GameEmbed() {
   }, [isFullscreen]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="mx-auto w-full max-w-4xl">
       {/* Game wrapper — fullscreen target */}
       <div
         ref={gameWrapperRef}
-        className={`bg-black rounded-xl overflow-hidden ${isFullscreen ? "flex flex-col justify-center" : ""}`}
+        className={`overflow-hidden rounded-2xl bg-black shadow-[0_24px_70px_rgba(41,37,36,0.18)] ring-1 ring-black/10 ${isFullscreen ? "flex flex-col justify-center" : ""}`}
         style={isFullscreen ? { height: "100vh" } : {}}
       >
         {/* Fixed-aspect game container */}
@@ -124,8 +124,9 @@ export default function GameEmbed() {
             >
               <div className="absolute inset-0 bg-black/45" />
               <button
+                type="button"
                 onClick={() => setState("loading")}
-                className="btn-play relative z-10 bg-primary hover:bg-primary/90 text-white font-heading font-bold text-xl px-10 py-4 rounded-full shadow-xl flex items-center gap-2"
+                className="btn-play relative z-10 flex min-h-12 items-center gap-2 rounded-full bg-primary px-8 py-3.5 font-heading text-lg font-extrabold text-white shadow-xl hover:bg-primary/90 sm:px-10 sm:py-4 sm:text-xl"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -155,11 +156,18 @@ export default function GameEmbed() {
         </div>
 
         {/* ── Game Toolbar ── */}
-        <div className="flex items-center justify-end gap-1 px-3 py-1.5 bg-[#1a1a2e] text-gray-400 text-sm">
+        <div className="flex min-h-11 items-center justify-between gap-2 bg-[#1a1a2e] px-2 text-sm text-gray-400 sm:px-3">
+          <span className="hidden pl-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/45 sm:inline">
+            Sprinter · Keyboard game
+          </span>
+          <div className="ml-auto flex items-center gap-0.5">
           {/* Like */}
           <button
+            type="button"
             onClick={() => setLiked(liked === true ? null : true)}
-            className={`p-1.5 rounded hover:bg-white/10 transition-colors ${liked === true ? "text-green-400" : ""}`}
+            aria-label="Like this game"
+            aria-pressed={liked === true}
+            className={`flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-white/10 ${liked === true ? "text-green-400" : ""}`}
             title="Like"
           >
             <svg className="w-4 h-4" fill={liked === true ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -168,8 +176,11 @@ export default function GameEmbed() {
           </button>
           {/* Dislike */}
           <button
+            type="button"
             onClick={() => setLiked(liked === false ? null : false)}
-            className={`p-1.5 rounded hover:bg-white/10 transition-colors ${liked === false ? "text-red-400" : ""}`}
+            aria-label="Dislike this game"
+            aria-pressed={liked === false}
+            className={`flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-white/10 ${liked === false ? "text-red-400" : ""}`}
             title="Dislike"
           >
             <svg className="w-4 h-4 rotate-180" fill={liked === false ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -181,8 +192,10 @@ export default function GameEmbed() {
 
           {/* Reload */}
           <button
+            type="button"
             onClick={handleReload}
-            className="p-1.5 rounded hover:bg-white/10 transition-colors"
+            aria-label="Reload game"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-white/10"
             title="Reload Game"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -193,8 +206,10 @@ export default function GameEmbed() {
 
           {/* Fullscreen */}
           <button
+            type="button"
             onClick={handleFullscreen}
-            className="p-1.5 rounded hover:bg-white/10 transition-colors"
+            aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg transition-colors hover:bg-white/10"
             title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
           >
             {isFullscreen ? (
@@ -207,6 +222,7 @@ export default function GameEmbed() {
               </svg>
             )}
           </button>
+          </div>
         </div>
       </div>
 

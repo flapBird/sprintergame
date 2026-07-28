@@ -19,23 +19,31 @@ export function buildMetadata({ title, description, path }: PageSeoInput): Metad
       : siteConfig.siteName;
   const pageDescription = description ?? siteConfig.seo.description;
   const canonical = `${siteConfig.domain}${path}`;
+  const socialImage = `${siteConfig.domain}${siteConfig.seo.ogImage}`;
 
   return {
     title: pageTitle,
     description: pageDescription,
+    ...(isHome ? { keywords: [...siteConfig.seo.keywords] } : {}),
     alternates: {
       canonical,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
     openGraph: {
       title: pageTitle,
       description: pageDescription,
       url: canonical,
       siteName: siteConfig.siteName,
+      locale: "en_US",
       images: [
         {
-          url: siteConfig.seo.ogImage,
+          url: socialImage,
           width: 1200,
           height: 630,
+          alt: "Sprinter Game — a classic 100-meter browser racing game",
         },
       ],
       type: "website",
@@ -44,7 +52,7 @@ export function buildMetadata({ title, description, path }: PageSeoInput): Metad
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: [siteConfig.seo.ogImage],
+      images: [socialImage],
     },
     // Google Search Console verification
     ...(siteConfig.analytics.gscVerification

@@ -2,7 +2,11 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata = buildMetadata({ title: "Privacy Policy", path: "/privacy" });
+export const metadata = buildMetadata({
+  title: "Privacy Policy",
+  description: "Read the SprinterGame.xyz privacy policy, including information about analytics, cookies, advertising, and third-party services.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

@@ -30,7 +30,7 @@ export const siteConfig = {
      * Homepage meta description, keep under 160 characters.
      * Describe what the game is and that it's free to play online.
      */
-    description: "Sprinter Game is a classic 100-meter dash racing game. Alternate arrow keys to gain momentum and sprint past opponents. Play free online — no download needed.",
+    description: "Play Sprinter Game online. Alternate the left and right arrow keys to race 100 meters in this classic browser game by Gamedesign.jp.",
 
     /** Comma-separated keywords for the homepage. */
     keywords: ["sprinter game", "sprinter game online", "100m sprint game", "running race game", "flash running game", "sprint game free", "track and field game", "crazygames sprinter", "sprinter 100m"],
@@ -50,7 +50,7 @@ export const siteConfig = {
     genre: ["Sports", "Running", "Arcade"],
 
     /** iframe embed URL — must be manually replaced with the real embeddable URL. */
-    embedUrl: "/game/sprinter.swf",
+    embedUrl: "https://cdn.playbloo.net/games/sprintergame/files/sprinter.swf",
 
     /** Aspect ratio of the embedded game, used to prevent CLS. */
     aspectRatio: "16 / 9",
@@ -69,13 +69,13 @@ export const siteConfig = {
     /**
      * Track & field inspired color palette — athletic, energetic, clean.
      */
-    primary: "#DC2F2F",
-    secondary: "#1B6B93",
+    primary: "#E85D2C",
+    secondary: "#009BB8",
     background: "#FFFBF7",
     surface: "#F3EFE9",
     textDark: "#292524",
-    fontHeading: "'Nunito', sans-serif",
-    fontBody: "'Quicksand', sans-serif",
+    fontHeading: "'Avenir Next Rounded', 'Nunito Sans', ui-rounded, system-ui, sans-serif",
+    fontBody: "'Avenir Next', Inter, ui-sans-serif, system-ui, sans-serif",
   },
 
   contact: {
