@@ -32,9 +32,6 @@ export const siteConfig = {
      */
     description: "Play Sprinter Game online. Alternate the left and right arrow keys to race 100 meters in this classic browser game by Gamedesign.jp.",
 
-    /** Comma-separated keywords for the homepage. */
-    keywords: ["sprinter game", "sprinter game online", "100m sprint game", "running race game", "flash running game", "sprint game free", "track and field game", "crazygames sprinter", "sprinter 100m"],
-
     /** Social sharing image, 1200x630px. Replace /public/og-image.png. */
     ogImage: "/og-image.png",
 

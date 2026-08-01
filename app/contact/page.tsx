@@ -1,6 +1,8 @@
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 
+const [emailUser, emailDomain] = siteConfig.contact.email.split("@");
+
 export const metadata = buildMetadata({
   title: "Contact",
   description: "Contact SprinterGame.xyz to report a game issue, broken page, attribution concern, or other site feedback.",
@@ -21,10 +23,10 @@ export default function ContactPage() {
       <div className="bg-surface rounded-xl p-6 border border-gray-100">
         <p className="text-sm text-text-dark/50 mb-1">Email us at:</p>
         <a
-          href={`mailto:${siteConfig.contact.email}`}
+          href={`mailto:${emailUser}%40${emailDomain}`}
           className="text-primary font-medium text-lg hover:underline"
         >
-          {siteConfig.contact.email}
+          {emailUser}<span>@</span>{emailDomain}
         </a>
       </div>
 

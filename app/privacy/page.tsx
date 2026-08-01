@@ -2,6 +2,8 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 import LegalPage from "@/components/LegalPage";
 
+const [emailUser, emailDomain] = siteConfig.contact.email.split("@");
+
 export const metadata = buildMetadata({
   title: "Privacy Policy",
   description: "Read the SprinterGame.xyz privacy policy, including information about analytics, cookies, advertising, and third-party services.",
@@ -114,10 +116,10 @@ export default function PrivacyPage() {
         <p>
           For questions about this Privacy Policy, contact us at{" "}
           <a
-            href={`mailto:${siteConfig.contact.email}`}
+            href={`mailto:${emailUser}%40${emailDomain}`}
             className="text-primary underline"
           >
-            {siteConfig.contact.email}
+            {emailUser}<span>@</span>{emailDomain}
           </a>
           .
         </p>

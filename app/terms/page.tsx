@@ -2,6 +2,8 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 import LegalPage from "@/components/LegalPage";
 
+const [emailUser, emailDomain] = siteConfig.contact.email.split("@");
+
 export const metadata = buildMetadata({
   title: "Terms & Conditions",
   description: "Read the terms and conditions for using SprinterGame.xyz and its browser-based game content.",
@@ -42,7 +44,12 @@ export default function TermsPage() {
       </section>
       <section>
         <h2 className="font-heading font-bold text-xl text-text-dark mt-8 mb-3">8. Contact</h2>
-        <p>For questions about these Terms, contact us at{" "}<a href={`mailto:${siteConfig.contact.email}`} className="text-primary underline">{siteConfig.contact.email}</a>.</p>
+        <p>
+          For questions about these Terms, contact us at{" "}
+          <a href={`mailto:${emailUser}%40${emailDomain}`} className="text-primary underline">
+            {emailUser}<span>@</span>{emailDomain}
+          </a>.
+        </p>
       </section>
     </LegalPage>
   );
