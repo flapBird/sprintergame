@@ -18,8 +18,6 @@ export function buildMetadata({ title, description, path }: PageSeoInput): Metad
       ? `${title} | ${siteConfig.siteName}`
       : siteConfig.siteName;
   const pageDescription = description ?? siteConfig.seo.description;
-  // Keep the homepage canonical aligned with the site's root URL while
-  // preserving the existing no-trailing-slash format for inner pages.
   const canonical = isHome
     ? `${siteConfig.domain}/`
     : `${siteConfig.domain}${path}`;
@@ -28,9 +26,6 @@ export function buildMetadata({ title, description, path }: PageSeoInput): Metad
   return {
     title: pageTitle,
     description: pageDescription,
-    alternates: {
-      canonical,
-    },
     robots: {
       index: true,
       follow: true,

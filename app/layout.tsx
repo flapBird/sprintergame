@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CanonicalLink from "@/components/CanonicalLink";
 import { siteConfig } from "@/lib/site.config";
 import { buildMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -26,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <CanonicalLink />
+      </head>
       <body className="font-body text-text-dark antialiased">
         <a
           href="#main-content"
