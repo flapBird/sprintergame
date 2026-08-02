@@ -115,12 +115,9 @@ export default function PrivacyPage() {
         </h2>
         <p>
           For questions about this Privacy Policy, contact us at{" "}
-          <a
-            href={`mailto:${emailUser}%40${emailDomain}`}
-            className="text-primary underline"
-          >
+          <span className="text-primary underline">
             {emailUser}<span>@</span>{emailDomain}
-          </a>
+          </span>
           .
         </p>
       </section>

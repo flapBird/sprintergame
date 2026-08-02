@@ -46,9 +46,9 @@ export default function TermsPage() {
         <h2 className="font-heading font-bold text-xl text-text-dark mt-8 mb-3">8. Contact</h2>
         <p>
           For questions about these Terms, contact us at{" "}
-          <a href={`mailto:${emailUser}%40${emailDomain}`} className="text-primary underline">
+          <span className="text-primary underline">
             {emailUser}<span>@</span>{emailDomain}
-          </a>.
+          </span>.
         </p>
       </section>
     </LegalPage>

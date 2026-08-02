@@ -19,15 +19,13 @@ export default function ContactPage() {
         Found a game issue, broken page, or attribution problem? Send us the details by email.
       </p>
 
-      {/* Email contact — will be replaced with a form later */}
       <div className="bg-surface rounded-xl p-6 border border-gray-100">
         <p className="text-sm text-text-dark/50 mb-1">Email us at:</p>
-        <a
-          href={`mailto:${emailUser}%40${emailDomain}`}
+        <span
           className="text-primary font-medium text-lg hover:underline"
         >
           {emailUser}<span>@</span>{emailDomain}
-        </a>
+        </span>
       </div>
 
       <p className="mt-6 text-sm leading-6 text-text-dark/65">
