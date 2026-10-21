@@ -24,13 +24,13 @@ export const siteConfig = {
 
   seo: {
     /** Homepage <title>. Used as-is on the homepage. */
-    title: "Play Sprinter Game Online Free | Sprinter Game",
+    title: "Sprinter Game – Play the Classic 100m Dash | SprinterGame.xyz",
 
     /**
      * Homepage meta description, keep under 160 characters.
      * Describe what the game is and that it's free to play online.
      */
-    description: "Play Sprinter Game online. Alternate the left and right arrow keys to race 100 meters in this classic browser game by Gamedesign.jp.",
+    description: "Play Sprinter Game online at SprinterGame.xyz. Alternate the left and right arrow keys to race 100 meters in this classic browser game by Gamedesign.jp.",
 
     /** Social sharing image, 1200x630px. Replace /public/og-image.png. */
     ogImage: "/og-image.png",

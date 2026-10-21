@@ -9,8 +9,9 @@ export default function Hero() {
     >
       <div className="relative z-10 mx-auto max-w-5xl">
         <GameEmbed />
-        <p className="mt-4 text-center text-sm leading-6 text-text-dark/55 sm:hidden">
-          Sprinter works best with a physical keyboard. On a phone or tablet, connect a keyboard before starting.
+        <p className="touch-only mt-4 text-center text-sm leading-6 text-text-dark/55">
+          On a phone or tablet, tap the Left and Right buttons below the game alternately. A physical keyboard gives the
+          best timing.
         </p>
       </div>
     </section>

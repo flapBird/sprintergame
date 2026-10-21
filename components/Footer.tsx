@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site.config";
 
 const footerLinks = [
   { href: "/about", label: "About" },
+  { href: "/sprinter-game-unblocked", label: "Unblocked guide" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms & Conditions" },

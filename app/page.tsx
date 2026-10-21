@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import AdsterraNative from "@/components/AdsterraNative";
 import Hero from "@/components/Hero";
 import SidebarLayout from "@/components/SidebarLayout";
@@ -21,7 +22,7 @@ const playSteps = [
   {
     number: "03",
     title: "Alternate the arrows",
-    text: "Press Left and Right in sequence. A steady rhythm is faster than random key mashing.",
+    text: "Press Left and Right in sequence, or tap the on-screen buttons on a touch device. A steady rhythm beats random mashing.",
   },
 ];
 
@@ -56,8 +57,8 @@ export default function HomePage() {
               Play Sprinter Game Online
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-dark/70 sm:text-lg">
-              Alternate the left and right arrow keys, keep your rhythm, and race to the finish. Sprinter is free to play
-              in your browser with no download or account.
+              Alternate the left and right arrow keys, keep your rhythm, and race to the finish. SprinterGame.xyz lets
+              you play the 2006 Gamedesign.jp classic free in your browser, with no download or account.
             </p>
           </header>
 
@@ -189,8 +190,9 @@ export default function HomePage() {
                   <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
-                  The original game uses physical arrow keys, so a desktop or laptop gives the best experience. A phone or tablet
-                  needs a connected keyboard because the game does not include touch controls.
+                  The original game uses physical arrow keys, so a desktop or laptop gives the best timing. On a phone or
+                  tablet, this site adds on-screen Left and Right buttons below the game; tap them alternately in the same
+                  rhythm you would use on a keyboard.
                 </p>
               </details>
 
@@ -218,6 +220,21 @@ export default function HomePage() {
 
               <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
+                  <span>Can I play Sprinter Game at school or work?</span>
+                  <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-text-dark/70">
+                  That depends on the network you are using. Many schools and workplaces block game sites, and we cannot
+                  promise a way around those restrictions. If the page loads but the game does not, our{" "}
+                  <Link href="/sprinter-game-unblocked" className="font-semibold text-primary underline underline-offset-2">
+                    Sprinter Game unblocked guide
+                  </Link>{" "}
+                  explains the likely causes and the honest options available.
+                </p>
+              </details>
+
+              <details className="group rounded-2xl border border-black/[0.06] bg-surface px-5 py-4 open:bg-white open:shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-heading font-extrabold text-text-dark">
                   <span>Why does my runner stumble?</span>
                   <span aria-hidden="true" className="text-xl text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
@@ -226,6 +243,33 @@ export default function HomePage() {
                   the alternating pattern, and then build speed again.
                 </p>
               </details>
+            </div>
+          </section>
+
+          <section aria-labelledby="about-site" className="border-t border-black/[0.07] pt-12">
+            <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-secondary">
+              Who runs this page
+            </p>
+            <h2 id="about-site" className="font-heading text-3xl font-black tracking-tight text-text-dark sm:text-4xl">
+              About SprinterGame.xyz
+            </h2>
+            <div className="mt-5 space-y-4 text-[1.02rem] leading-8 text-text-dark/75">
+              <p>
+                SprinterGame.xyz is an independent fan site built around one game. It is not affiliated with
+                Gamedesign.jp, and the game and its artwork remain their work. The site exists to keep this small
+                Flash-era classic easy to find, easy to start, and easy to understand on a modern browser.
+              </p>
+              <p>
+                You can read more{" "}
+                <Link href="/about" className="font-semibold text-primary underline underline-offset-2">
+                  about this site and how the game is maintained
+                </Link>
+                , or see the{" "}
+                <Link href="/sprinter-game-unblocked" className="font-semibold text-primary underline underline-offset-2">
+                  Sprinter Game unblocked guide
+                </Link>{" "}
+                if the game will not load on your school or work network.
+              </p>
             </div>
           </section>
         </div>

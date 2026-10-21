@@ -40,6 +40,22 @@ body {
   box-shadow: 0 8px 30px rgba(232, 93, 44, 0.35);
 }
 
+/* On-screen arrow buttons are only useful without a precise pointer. */
+.touch-controls,
+.touch-only {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .touch-controls {
+    display: grid;
+  }
+
+  .touch-only {
+    display: block;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html,
   body {

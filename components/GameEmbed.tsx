@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { siteConfig } from "@/lib/site.config";
 
 export default function GameEmbed() {
@@ -102,6 +108,46 @@ export default function GameEmbed() {
       gameWrapperRef.current.requestFullscreen();
     }
   }, [isFullscreen]);
+
+  const dispatchArrow = useCallback((type: "keydown" | "keyup", key: "ArrowLeft" | "ArrowRight") => {
+    const player = playerRef.current;
+    if (!player) return;
+    // Ruffle attaches its key listeners to the container inside its shadow root;
+    // events dispatched on the host element never reach it.
+    const shadowRoot: ShadowRoot | null = player.shadowRoot ?? null;
+    const target: HTMLElement =
+      (shadowRoot?.querySelector("#container") as HTMLElement | null) ?? player;
+    if (type === "keydown") {
+      target.focus({ preventScroll: true });
+    }
+    const keyCode = key === "ArrowLeft" ? 37 : 39;
+    const event = new KeyboardEvent(type, {
+      key,
+      code: key,
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
+    Object.defineProperty(event, "keyCode", { get: () => keyCode });
+    Object.defineProperty(event, "which", { get: () => keyCode });
+    target.dispatchEvent(event);
+  }, []);
+
+  const pressArrow =
+    (key: "ArrowLeft" | "ArrowRight") => (event: ReactPointerEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      event.currentTarget.setPointerCapture(event.pointerId);
+      dispatchArrow("keydown", key);
+    };
+
+  const releaseArrow =
+    (key: "ArrowLeft" | "ArrowRight") => (event: ReactPointerEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      dispatchArrow("keyup", key);
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+        event.currentTarget.releasePointerCapture(event.pointerId);
+      }
+    };
 
   return (
     <div className="mx-auto w-full max-w-4xl">
@@ -223,6 +269,36 @@ export default function GameEmbed() {
             )}
           </button>
           </div>
+        </div>
+
+        {/* ── Touch controls (coarse pointers only) ── */}
+        <div className="touch-controls grid-cols-2 gap-2 bg-[#1a1a2e] px-2 pb-2">
+          <button
+            type="button"
+            aria-label="Move runner left"
+            disabled={state !== "playing"}
+            onPointerDown={pressArrow("ArrowLeft")}
+            onPointerUp={releaseArrow("ArrowLeft")}
+            onPointerCancel={releaseArrow("ArrowLeft")}
+            onContextMenu={(event) => event.preventDefault()}
+            className="flex min-h-12 touch-none select-none items-center justify-center gap-2 rounded-xl bg-white/10 font-heading text-base font-extrabold text-white transition-colors active:bg-white/25 disabled:opacity-35"
+          >
+            <span aria-hidden="true" className="text-xl">←</span>
+            Left
+          </button>
+          <button
+            type="button"
+            aria-label="Move runner right"
+            disabled={state !== "playing"}
+            onPointerDown={pressArrow("ArrowRight")}
+            onPointerUp={releaseArrow("ArrowRight")}
+            onPointerCancel={releaseArrow("ArrowRight")}
+            onContextMenu={(event) => event.preventDefault()}
+            className="flex min-h-12 touch-none select-none items-center justify-center gap-2 rounded-xl bg-white/10 font-heading text-base font-extrabold text-white transition-colors active:bg-white/25 disabled:opacity-35"
+          >
+            Right
+            <span aria-hidden="true" className="text-xl">→</span>
+          </button>
         </div>
       </div>
 
