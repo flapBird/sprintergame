@@ -1,3 +1,4 @@
+import AdsterraNative from "@/components/AdsterraNative";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 
@@ -31,6 +32,8 @@ export default function ContactPage() {
       <p className="mt-6 text-sm leading-6 text-text-dark/65">
         For game-related issues, include your browser, operating system, and a short description of what happened.
       </p>
+
+      <AdsterraNative className="mt-10" />
     </div>
   );
 }

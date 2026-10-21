@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AdsterraNative from "@/components/AdsterraNative";
 import Hero from "@/components/Hero";
 import SidebarLayout from "@/components/SidebarLayout";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -132,6 +133,8 @@ export default function HomePage() {
               </p>
             </div>
           </section>
+
+          <AdsterraNative />
 
           <section aria-labelledby="what-to-expect">
             <p className="mb-2 text-sm font-extrabold uppercase tracking-[0.16em] text-secondary">

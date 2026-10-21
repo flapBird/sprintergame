@@ -1,3 +1,4 @@
+import AdsterraNative from "@/components/AdsterraNative";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site.config";
 
@@ -29,6 +30,8 @@ export default function AboutPage() {
             Gamedesign.jp describes Sprinter as a 100-meter sprint simulation controlled with the arrow keys.
           </p>
         </div>
+
+        <AdsterraNative />
 
         <div>
           <h2 className="font-heading font-bold text-xl text-text-dark mb-3">About This Site</h2>
